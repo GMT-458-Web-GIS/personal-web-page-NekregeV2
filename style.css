@@ -1,0 +1,122 @@
+/* Genel sayfa ayarları */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Ana kapsayıcı */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Fotoğraf kısmı */
+.photo-section img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    background-color: transparent;
+    animation: slideDown 2s ease;
+}
+
+/* Yazı kısmı */
+.text-section {
+    max-width: 400px;
+    animation: slideUp 2s ease;
+}
+
+.text-section h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: #333;
+}
+
+.text-section p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Animasyonlar */
+@keyframes slideDown {
+    from {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+/* Üst menü */
+nav {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: #0077cc;
+}
+
+/* About sayfası için stil */
+.about-container {
+    max-width: 700px;
+    margin: 100px auto;
+    padding: 20px;
+    text-align: center;
+    animation: fadeIn 2s ease;
+}
+
+.about-container h1 {
+    font-size: 2.2rem;
+    color: #222;
+}
+
+.about-container p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-top: 15px;
+}
