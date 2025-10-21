@@ -120,3 +120,17 @@ nav ul li a.active {
     line-height: 1.6;
     margin-top: 15px;
 }
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    background-color: #0077cc;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #005fa3;
+}
