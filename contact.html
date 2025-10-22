@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | Egemen Erken</title>
+  <link rel="stylesheet" href="style.css"/>
+
+  <style>
+    .contact-wrap{max-width:1000px;margin:40px auto;padding:0 20px;}
+    .contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:22px}
+    @media (max-width:900px){ .contact-grid{grid-template-columns:1fr;}}
+    .card{background:#fff;border-radius:12px;padding:18px 16px;box-shadow:0 4px 10px rgba(0,0,0,.08);animation:slideUp .7s ease forwards;}
+    .card h3{margin:0 0 10px;color:#6e1abcae}
+    .field{display:flex;flex-direction:column;margin-bottom:12px}
+    .field label{font-weight:600;margin-bottom:6px}
+    .field input,.field textarea{
+      padding:10px 12px;border:1px solid #ddd;border-radius:10px;font:inherit;outline:none;
+    }
+    .field input:focus,.field textarea:focus{border-color:#6e1abc}
+    textarea{min-height:140px;resize:vertical}
+    .btn{
+      display:inline-block;text-decoration:none;font-weight:600;padding:10px 16px;border-radius:10px;
+      border:2px solid #6e1abc;transition:transform .15s ease, background .2s ease, color .2s ease;
+      cursor:pointer;background:transparent
+    }
+    .btn:hover{transform:translateY(-2px);background:#6e1abc;color:#fff}
+    .muted{opacity:.9}
+    .list{list-style:none;margin:0;padding:0}
+    .list li{margin:8px 0}
+    .copy{margin-left:8px;font-size:.9rem;border-color:#aaa}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Egemen Erken</h1>
+    <p>Geomatics Engineering student at Hacettepe University</p>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="aboutme.html">About Me</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="hobbies.html">Hobbies</a></li>
+        <li><a href="maps.html">Maps</a></li>
+        <li><a class="active" href="contact.html">Contact me</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contact-wrap">
+    <h2 style="color:#6e1abcae;margin:0 0 6px;">Contact Me</h2>
+    <p class="muted">Feel free to get in touch for project ideas or collaborations.</p>
+
+    <div class="contact-grid">
+      <!-- FORM -->
+      <section class="card">
+        <h3>Message Form</h3>
+        <form id="contactForm">
+          <div class="field">
+            <label for="name">Full Name</label>
+            <input id="name" name="name" type="text" placeholder="Your name" required/>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required/>
+          </div>
+          <div class="field">
+            <label for="subject">Subject</label>
+            <input id="subject" name="subject" type="text" placeholder="Subject" required/>
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Write your message..." required></textarea>
+          </div>
+          <button class="btn" type="submit">Submit</button>
+        </form>
+        <p class="muted" style="margin-top:8px;">(This is a sample form; submissions are not sent.)</p>
+      </section>
+
+      <!-- BİLGİ -->
+      <aside class="card">
+        <h3>Contact Details</h3>
+        <ul class="list">
+          <li><strong>Email:</strong> nekrege@gmail.com</li>
+          <li><strong>Phone:</strong> +90 541 802 0991</li>
+          <li><strong>Location:</strong> Ankara, Türkiye</li>
+        </ul>
+
+        <h3 style="margin-top:16px;">Links</h3>
+        <ul class="list">
+          <li>GitHub — <a href="https://github.com/egemenerken" target="_blank" rel="noopener">github.com/egemenerken</a></li>
+          <li>LinkedIn — <a href="#" target="_blank" rel="noopener">linkedin.com/in/...</a></li>
+        </ul>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Egemen Erken | All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Formun gönderimini durdur, sayfa yenilenmesin
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      alert('This is a demo form — no data is sent.');
+      this.reset();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hobbies | Egemen Erken</title>
+  <link rel="stylesheet" href="style.css"/>
+
+  <style>
+    .hobby-wrap {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+      animation: slideDown 1s ease forwards;
+    }
+    .hobby-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 30px;
+    }
+    .hobby-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px 16px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      animation: slideUp .7s ease forwards;
+      text-align: center;
+    }
+    .hobby-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 14px;
+    }
+    .hobby-card h3 {
+      margin: 0 0 10px;
+      color: #6e1abcae;
+    }
+    .hobby-card p {
+      margin: 0;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Egemen Erken</h1>
+    <p>Geomatics Engineering student at Hacettepe University</p>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="aboutme.html">About Me</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a class="active" href="hobbies.html">Hobbies</a></li>
+        <li><a href="maps.html">Maps</a></li>
+        <li><a href="contact.html">Contact me</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="hobby-wrap">
+    <h2 style="color:#6e1abcae; text-align:center;">My Hobbies</h2>
+    <p style="text-align:center; margin-top:8px; color:#777;">
+      Outside of my academic and professional interests, here are three activities I genuinely enjoy.
+    </p>
+
+    <div class="hobby-grid">
+      <div class="hobby-card">
+        <img src="images/hobby-chess.jpg" alt="Playing chess image">
+        <h3>Playing Chess</h3>
+        <p>
+          I love strategic thinking and planning ahead — chess is one of the activities that keeps my mind sharp and focused.
+        </p>
+      </div>
+
+      <div class="hobby-card">
+        <img src="images/hobby-hiking.jpg" alt="Hiking in nature image">
+        <h3>Hiking & Nature Walks</h3>
+        <p>
+          Exploring trails, taking deep breaths of fresh air and seeing landscapes — nature walks are where I recharge and reflect.
+        </p>
+      </div>
+
+      <div class="hobby-card">
+        <img src="images/hobby-guitar.jpg" alt="Playing guitar image">
+        <h3>Playing Guitar</h3>
+        <p>
+          Stringing melodies and learning new chords has been a relaxing and creative outlet for me — music brings balance.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Egemen Erken | All rights reserved.</p>
+  </footer>
+</body>
+</html>

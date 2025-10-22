@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Me | Egemen Erken</title>
+  <link rel="stylesheet" href="style.css"/>
+
+  <!-- Sayfaya özel küçük stiller -->
+  <style>
+    .about-hero{
+      max-width: 1000px;
+      margin: 40px auto 20px;
+      padding: 0 20px;
+    }
+    .about-hero .hero-wrap{
+      display:flex; align-items:center; gap:40px; flex-wrap:wrap; justify-content:center;
+    }
+    .about-hero .profile{
+      width:220px; height:260px; border-radius:12px; overflow:hidden;
+      border:3px solid #f1f3f2; animation: slideDown 1.2s ease forwards;
+    }
+    .about-hero .profile img{ width:100%; height:100%; object-fit:cover; display:block; }
+
+    .about-hero .text{ max-width:560px; animation: slideUp 0.8s ease forwards; }
+    .about-hero h2{ margin:0 0 10px; color:#6e1abcae; }
+    .about-hero p{ margin:0 0 10px; font-size:1.05rem; }
+
+    .cards{
+      max-width:1000px; margin: 20px auto; padding: 0 20px;
+      display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap:16px;
+    }
+    .card{
+      background:#fff; border-radius:12px; padding:18px 16px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.08);
+      animation: slideUp 0.7s ease forwards;
+    }
+    .card h3{ margin:0 0 8px; color:#6e1abcae; }
+    .muted{ opacity:.85; }
+
+    .timeline{ list-style:none; padding:0; margin:0; }
+    .timeline li{
+      padding:10px 0; border-bottom:1px solid #eee;
+    }
+    .timeline li:last-child{ border-bottom:none; }
+    .badge{
+      display:inline-block; padding:2px 8px; border-radius:999px;
+      background:#eef; font-size:.85rem; margin-left:8px;
+    }
+
+    .tags{ margin-top:8px; display:flex; flex-wrap:wrap; gap:8px; }
+    .tag{
+      background:#f4f4ff; border:1px solid #e8e8ff; padding:6px 10px; border-radius:999px;
+      font-size:.9rem;
+    }
+
+    .cta{
+      max-width:1000px; margin: 10px auto 50px; padding: 0 20px; text-align:center;
+    }
+    .btn{
+      display:inline-block; text-decoration:none; font-weight:600;
+      padding:10px 16px; border-radius:10px; border:2px solid #6e1abc;
+      transition: transform .15s ease, background .2s ease, color .2s ease;
+    }
+    .btn:hover{ transform: translateY(-2px); background:#6e1abc; color:#fff; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Egemen Erken</h1>
+    <p>Geomatics Engineering student at Hacettepe University</p>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a class="active" href="aboutme.html">About Me</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="hobbies.html">Hobbies</a></li>
+        <li><a href="maps.html">Maps</a></li>
+        <li><a href="contact.html">Contact me</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Kahraman alanı -->
+    <section class="about-hero">
+      <div class="hero-wrap">
+        <div class="profile">
+          <!-- egemen.jpg dosyan bu klasörde olmalı -->
+          <img src="egemen.jpg" alt="Egemen Erken">
+        </div>
+        <div class="text">
+          <h2>About Me</h2>
+          <p class="muted">
+            I’m a senior Geomatics Engineering student focusing on web mapping, GIS, and geospatial analysis.
+            I enjoy building clean, minimal web pages and experimenting with interactive maps.
+          </p>
+          <p class="muted">
+            In this page you’ll find a quick overview of my education, interests, and skills I actively use.
+          </p>
+          <div class="tags">
+            <span class="tag">Web GIS</span>
+            <span class="tag">OpenLayers</span>
+            <span class="tag">HTML/CSS</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Python</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kartlar -->
+    <section class="cards">
+      <article class="card">
+        <h3>Education</h3>
+        <ul class="timeline">
+          <li>
+            Hacettepe University – Geomatics Engineering
+            <span class="badge">Senior</span>
+          </li>
+          <li>
+            Coursework: GIS, Remote Sensing, Cartography, Web Programming
+          </li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h3>Interests</h3>
+        <p class="muted">
+          Web mapping, spatial data visualization, photogrammetry, and front-end UI.
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>Skills</h3>
+        <ul class="timeline">
+          <li>HTML &amp; CSS (responsive layouts, animations)</li>
+          <li>JavaScript (DOM basics, map libraries)</li>
+          <li>OpenLayers (OSM, view/zoom, layers)</li>
+          <li>Python (data wrangling, basic geospatial)</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- Öne çıkanlar (style.css'teki .highlights sınıfını kullanıyoruz) -->
+    <section class="about-hero">
+      <div class="highlights">
+        <h2>Highlights</h2>
+        <ul>
+          <li>Built a simple personal site for GMT458 assignment</li>
+          <li>Experimented with OpenLayers and OSM tiles</li>
+          <li>Designed accessible, minimal UI components</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cta">
+      <a class="btn" href="cv.html">View CV</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Egemen Erken | All rights reserved.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CV | Egemen Erken</title>
+  <link rel="stylesheet" href="style.css"/>
+
+  <style>
+    .cv-container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .cv-header {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+      animation: slideDown 1s ease forwards;
+    }
+
+    .cv-photo {
+      width: 170px;
+      height: 200px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 3px solid #f1f3f2;
+    }
+
+    .cv-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .cv-meta h2 {
+      margin: 0 0 5px;
+      color: #6e1abcae;
+    }
+
+    .cv-meta p {
+      margin: 3px 0;
+    }
+
+    .cv-meta a {
+      color: #6e1abc;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .cv-section {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      margin-top: 25px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      animation: slideUp 1s ease forwards;
+    }
+
+    .cv-section h3 {
+      margin-top: 0;
+      color: #6e1abcae;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 5px;
+    }
+
+    .cv-section ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .cv-section li {
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    .download {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 16px;
+      border: 2px solid #6e1abc;
+      border-radius: 10px;
+      text-decoration: none;
+      color: #6e1abc;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #6e1abc;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Egemen Erken</h1>
+    <p>Geomatics Engineering Student at Hacettepe University</p>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="aboutme.html">About Me</a></li>
+        <li><a class="active" href="cv.html">CV</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="hobbies.html">Hobbies</a></li>
+        <li><a href="maps.html">Maps</a></li>
+        <li><a href="contact.html">Contact Me</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="cv-container">
+    <section class="cv-header">
+      <div class="cv-photo">
+        <img src="egemen.jpg" alt="Egemen Erken">
+      </div>
+      <div class="cv-meta">
+        <h2>Curriculum Vitae</h2>
+        <p><strong>Location:</strong> Ankara, Türkiye</p>
+        <p><strong>Phone:</strong> +90 541 802 0991</p>
+        <p><strong>Email:</strong> <a href="mailto:nekrege@gmail.com">nekrege@gmail.com</a></p>
+        <p><strong>Date of Birth:</strong> 29.10.2001</p>
+      </div>
+    </section>
+
+    <section class="cv-section">
+      <h3>Education</h3>
+      <ul>
+        <li><strong>Hacettepe University</strong>, Department of Geomatics Engineering (2019 – Present)</li>
+        <li><strong>Ali Fuat Başgil Anatolian High School</strong>, Samsun/Çarşamba (2015 – 2019)</li>
+      </ul>
+    </section>
+
+    <section class="cv-section">
+      <h3>Experience</h3>
+      <ul>
+        <li><strong>ERC Surveying Office</strong>, Samsun (July – August 2022)  
+          – Gained experience in using NetCAD and GPS CORS devices.
+        </li>
+        <li><strong>General Directorate of Highways (4th Regional Office)</strong>, Ankara (June – July 2023)  
+          – Worked in Real Estate and Road Project departments using NetCAD and MicroStation.
+        </li>
+        <li><strong>Mim-Hart Surveying Office</strong> (July – August 2024)  
+          – Acquired practical experience in building layout, topographic mapping, and technical drawings.
+        </li>
+      </ul>
+    </section>
+
+    <section class="cv-section">
+      <h3>Skills</h3>
+      <ul>
+        <li>Microsoft Office (Excel, Word, PowerPoint)</li>
+        <li>NetCAD, QGIS, ERDAS Imagine</li>
+        <li>Python, MATLAB</li>
+      </ul>
+    </section>
+
+    <section class="cv-section">
+      <h3>Languages</h3>
+      <ul>
+        <li>Turkish – Native</li>
+        <li>English – Intermediate</li>
+      </ul>
+    </section>
+
+    <section class="cv-section">
+      <h3>Interests</h3>
+      <ul>
+        <li>Hiking</li>
+        <li>Chess</li>
+      </ul>
+    </section>
+
+    <div class="download">
+      <a href="Egemen_Erken_Cv_Eng.pdf" class="btn" target="_blank">Download PDF</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Egemen Erken | All rights reserved.</p>
+  </footer>
+</body>
+</html>

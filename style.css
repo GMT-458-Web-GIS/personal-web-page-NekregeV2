@@ -1,0 +1,161 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0aa2f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #010101fb;
+    color: white;
+    text-align: center;
+    padding: 40px 0;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+header p {
+    font-size: 1.1rem;
+    margin: 5px 0 20px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ecf0f1;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: #efedf1;
+}
+
+main {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.intro {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.intro-container {
+    display: flex;
+    align-items: center;       
+    justify-content: center;    
+    gap: 40px;                  
+    flex-wrap: wrap;            
+}
+
+.profile-pic {
+    width: 200px;          
+    height: 200px;         
+    object-fit: cover;     
+    border-radius: 12px;  
+    background-color: transparent; 
+    display: block;
+    margin: 0 auto 20px;   
+    border: 3px solid #aa29ff58; 
+
+}
+.intro-text {
+    max-width: 500px;
+}
+
+.intro-text h2 {
+    color: #6e1abcae;
+    margin-top: 0;
+}
+
+.intro-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+} 
+.highlights {
+    background-color: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.highlights h2 {
+    text-align: center;
+    color: #e7f9f5;
+}
+
+.highlights ul {
+    list-style: none;
+    padding: 0;
+}
+
+.highlights li {
+    margin: 10px 0;
+    font-size: 1.1rem;
+}
+
+footer {
+    text-align: center;
+    background-color: #d2b8f8;
+    color: white;
+    padding: 15px 0;
+    margin-top: 60px;
+    font-size: 0.9rem;
+}
+
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.profile-pic {
+    width: 200px;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 12px;
+    background-color: transparent;
+    border: 3px solid #f1f3f2;
+    animation: slideDown 1.2s ease forwards;
+}
+
+.intro-text {
+    max-width: 500px;
+    animation: slideUp 0.8s ease forwards;
+    animation-delay: 0.1s; 
+}

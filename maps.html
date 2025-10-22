@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maps | Egemen Erken</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- OpenLayers bağlantıları -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@6.15.1/ol.css" />
+  <script src="https://cdn.jsdelivr.net/npm/ol@6.15.1/ol.js"></script>
+
+  <style>
+    .map-wrap {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    #map {
+      width: 100%;
+      height: 500px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Egemen Erken</h1>
+    <p>Geomatics Engineering student at Hacettepe University</p>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="aboutme.html">About Me</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="hobbies.html">Hobbies</a></li>
+        <li><a class="active" href="maps.html">Maps</a></li>
+        <li><a href="contact.html">Contact me</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="map-wrap">
+    <h2 style="color:#6e1abcae;">Interactive Map (OpenLayers)</h2>
+    <p>
+      This page demonstrates a simple web map created with the OpenLayers library.
+      It displays OpenStreetMap tiles centered on Ankara, where Hacettepe University is located.
+    </p>
+
+    <div id="map"></div>
+  </main>
+
+  <footer>
+    <p>© 2025 Egemen Erken | All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Basit harita oluşturma
+    const map = new ol.Map({
+      target: 'map',
+      layers: [
+        new ol.layer.Tile({
+          source: new ol.source.OSM() // OpenStreetMap tabanı
+        })
+      ],
+      view: new ol.View({
+        center: ol.proj.fromLonLat([32.85, 39.93]), // Ankara koordinatları
+        zoom: 8
+      })
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects | Egemen Erken</title>
+  <link rel="stylesheet" href="style.css"/>
+
+  <style>
+    .wrap{max-width:1100px;margin:40px auto;padding:0 20px;}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:18px;}
+    .card{background:#fff;border-radius:12px;padding:18px 16px;box-shadow:0 4px 10px rgba(0,0,0,.08);animation:slideUp .7s ease forwards;}
+    .card h3{margin:0 0 8px;color:#6e1abcae}
+    .muted{opacity:.9}
+    .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    .tag{background:#f4f4ff;border:1px solid #e8e8ff;padding:6px 10px;border-radius:999px;font-size:.9rem}
+    .actions{margin-top:12px;display:flex;gap:10px;flex-wrap:wrap}
+    .btn{display:inline-block;text-decoration:none;font-weight:600;padding:10px 14px;border-radius:10px;border:2px solid #6e1abc;transition:transform .15s ease, background .2s ease, color .2s ease;}
+    .btn:hover{transform:translateY(-2px);background:#6e1abc;color:#fff}
+    .tech-block{margin-top:28px}
+    .tech-table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 10px rgba(0,0,0,.08);}
+    .tech-table th,.tech-table td{padding:14px 12px;border-bottom:1px solid #eee;text-align:left}
+    .tech-table th{background:#fafaff}
+    .logo-cell{display:flex;align-items:center;gap:10px}
+    .logo{width:28px;height:28px;object-fit:contain;border-radius:6px}
+    .shot{width:100%;height:180px;object-fit:cover;border-radius:10px;margin:8px 0}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Egemen Erken</h1>
+    <p>Geomatics Engineering student at Hacettepe University</p>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="aboutme.html">About Me</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a class="active" href="projects.html">Projects</a></li>
+        <li><a href="hobbies.html">Hobbies</a></li>
+        <li><a href="maps.html">Maps</a></li>
+        <li><a href="contact.html">Contact me</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section>
+      <h2 style="color:#6e1abcae;margin:0 0 8px">Projects</h2>
+      <p class="muted">Some of the selected projects I have worked on. Each card includes a short description, tags, and links.</p>
+
+      <div class="grid">
+        <article class="card">
+          <h3>Campus Map (OpenLayers)</h3>
+          <img class="shot" src="images/project-campus.jpg" alt="Campus map screenshot">
+          <p class="muted">An OSM-based campus map featuring layer control and an initial zoom view of Hacettepe University.</p>
+          <div class="tags">
+            <span class="tag">OpenLayers</span><span class="tag">OSM</span><span class="tag">JavaScript</span>
+          </div>
+          <div class="actions">
+            <a class="btn" href="maps.html">View</a>
+            <a class="btn" href="#" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Photogrammetry Notes</h3>
+          <img class="shot" src="images/project-photo.jpg" alt="Photogrammetry screenshot">
+          <p class="muted">A simple static website for lecture summaries and small visualizations.</p>
+          <div class="tags">
+            <span class="tag">HTML</span><span class="tag">CSS</span>
+          </div>
+          <div class="actions">
+            <a class="btn" href="#" target="_blank">Demo</a>
+            <a class="btn" href="#" target="_blank">GitHub</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Simple Geo-Tools</h3>
+          <img class="shot" src="images/project-tools.jpg" alt="Geo tools screenshot">
+          <p class="muted">A set of small JavaScript utilities for coordinate conversion, distance, and azimuth calculations.</p>
+          <div class="tags">
+            <span class="tag">JavaScript</span><span class="tag">GIS</span>
+          </div>
+          <div class="actions">
+            <a class="btn" href="#" target="_blank">Demo</a>
+            <a class="btn" href="#" target="_blank">GitHub</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="tech-block">
+      <h2 style="color:#6e1abcae;margin:22px 0 10px">Technologies</h2>
+      <table class="tech-table">
+        <tr>
+          <th>Technology</th>
+          <th>Logo</th>
+          <th>Usage in Projects</th>
+          <th>Level</th>
+        </tr>
+        <tr>
+          <td>OpenLayers</td>
+          <td class="logo-cell"><img class="logo" src="icons/ol.png" alt="OpenLayers logo">OL</td>
+          <td>Used for base maps, zoom, and layer controls</td>
+          <td>Intermediate</td>
+        </tr>
+        <tr>
+          <td>HTML</td>
+          <td class="logo-cell"><img class="logo" src="icons/html.png" alt="HTML logo">HTML</td>
+          <td>Created the main structure of static pages</td>
+          <td>Advanced</td>
+        </tr>
+        <tr>
+          <td>CSS</td>
+          <td class="logo-cell"><img class="logo" src="icons/css.png" alt="CSS logo">CSS</td>
+          <td>Handled responsive layout and animations (slideUp/slideDown)</td>
+          <td>Intermediate</td>
+        </tr>
+        <tr>
+          <td>JavaScript</td>
+          <td class="logo-cell"><img class="logo" src="icons/js.png" alt="JavaScript logo">JS</td>
+          <td>Implemented OpenLayers initialization and minor interactive tools</td>
+          <td>Intermediate</td>
+        </tr>
+        <tr>
+          <td>Python</td>
+          <td class="logo-cell"><img class="logo" src="icons/python.png" alt="Python logo">Python</td>
+          <td>Used for simple data preprocessing and analysis</td>
+          <td>Intermediate</td>
+        </tr>
+        <tr>
+          <td>QGIS</td>
+          <td class="logo-cell"><img class="logo" src="icons/qgis.png" alt="QGIS logo">QGIS</td>
+          <td>Edited vector and raster data before visualization</td>
+          <td>Basic</td>
+        </tr>
+      </table>
+      <p class="muted" style="margin-top:8px">
+        Note: Place small 28×28 PNG logos in the <code>/icons/</code> folder (e.g. <code>icons/html.png</code>).
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Egemen Erken | All rights reserved.</p>
+  </footer>
+</body>
+</html>
