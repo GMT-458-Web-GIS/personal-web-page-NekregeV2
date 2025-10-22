@@ -6,9 +6,9 @@
   <title>Maps | Egemen Erken</title>
   <link rel="stylesheet" href="style.css" />
 
-  <!-- OpenLayers bağlantıları -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@6.15.1/ol.css" />
-  <script src="https://cdn.jsdelivr.net/npm/ol@6.15.1/ol.js"></script>
+  <!-- OpenLayers -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v10.6.1/ol.css" />
+  <script src="https://cdn.jsdelivr.net/npm/ol@v10.6.1/dist/ol.js"></script>
 
   <style>
     .map-wrap {
@@ -21,6 +21,40 @@
       height: 500px;
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Popup balonu */
+    .ol-popup {
+      position: absolute;
+      background: #fff;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      min-width: 190px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      transform: translate(-50%, -110%);
+    }
+    .ol-popup:after,
+    .ol-popup:before {
+      top: 100%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+    }
+    .ol-popup:after {
+      border-top-color: #fff;
+      border-width: 10px;
+      left: 50%;
+      margin-left: -10px;
+    }
+    .ol-popup:before {
+      border-top-color: #ddd;
+      border-width: 11px;
+      left: 50%;
+      margin-left: -11px;
     }
   </style>
 </head>
@@ -45,10 +79,13 @@
     <h2 style="color:#6e1abcae;">Interactive Map (OpenLayers)</h2>
     <p>
       This page demonstrates a simple web map created with the OpenLayers library.
-      It displays OpenStreetMap tiles centered on Ankara, where Hacettepe University is located.
+      It displays OpenStreetMap tiles centered on Ankara, highlighting the Geomatics Engineering Department at Hacettepe University, Beytepe Campus.
     </p>
 
     <div id="map"></div>
+    <div id="popup" class="ol-popup" style="display:none;">
+      <div id="popup-content"></div>
+    </div>
   </main>
 
   <footer>
@@ -56,18 +93,78 @@
   </footer>
 
   <script>
-    // Basit harita oluşturma
+    // Temel harita
     const map = new ol.Map({
       target: 'map',
       layers: [
         new ol.layer.Tile({
-          source: new ol.source.OSM() // OpenStreetMap tabanı
+          source: new ol.source.OSM()
         })
       ],
       view: new ol.View({
-        center: ol.proj.fromLonLat([32.85, 39.93]), // Ankara koordinatları
-        zoom: 8
+        center: ol.proj.fromLonLat([32.85, 39.93]), // Ankara
+        zoom: 11
       })
+    });
+
+    // 📍 Geomatik Bölümü noktası
+    const geomaticsLonLat = [32.73384457105036, 39.86563262561202];
+
+    const geomaticsFeature = new ol.Feature({
+      geometry: new ol.geom.Point(ol.proj.fromLonLat(geomaticsLonLat)),
+      name: 'Hacettepe University',
+      dept: 'Department of Geomatics Engineering (Beytepe Campus)'
+    });
+
+    geomaticsFeature.setStyle(
+      new ol.style.Style({
+        image: new ol.style.Circle({
+          radius: 7,
+          fill: new ol.style.Fill({ color: '#6e1abc' }),
+          stroke: new ol.style.Stroke({ color: '#fff', width: 2 })
+        })
+      })
+    );
+
+    const geomaticsLayer = new ol.layer.Vector({
+      source: new ol.source.Vector({ features: [geomaticsFeature] })
+    });
+    map.addLayer(geomaticsLayer);
+
+    // Popup
+    const popupEl = document.getElementById('popup');
+    const popupContentEl = document.getElementById('popup-content');
+    const overlay = new ol.Overlay({
+      element: popupEl,
+      positioning: 'bottom-center',
+      stopEvent: false,
+      offset: [0, -12]
+    });
+    map.addOverlay(overlay);
+
+    // Tıklama ile popup
+    map.on('singleclick', (evt) => {
+      const feature = map.forEachFeatureAtPixel(evt.pixel, f => f);
+      if (!feature) {
+        popupEl.style.display = 'none';
+        return;
+      }
+      const coord = feature.getGeometry().getCoordinates();
+      overlay.setPosition(coord);
+      const lonlat = ol.proj.toLonLat(coord).map(n => n.toFixed(5)).join(', ');
+      popupContentEl.innerHTML = `
+        <strong>${feature.get('name')}</strong><br/>
+        ${feature.get('dept')}<br/>
+        <em>Lon,Lat:</em> ${lonlat}
+      `;
+      popupEl.style.display = 'block';
+    });
+
+    // Sayfa açılışında noktaya odaklan
+    map.getView().animate({
+      center: ol.proj.fromLonLat(geomaticsLonLat),
+      zoom: 15,
+      duration: 1000
     });
   </script>
 </body>
